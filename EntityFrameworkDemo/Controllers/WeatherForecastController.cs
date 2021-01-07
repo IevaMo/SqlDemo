@@ -30,7 +30,8 @@ namespace EntityFrameworkDemo.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var fruits = _context.Fruits;
-
+            var users = _context.Users.OrderBy(x => x.Id).ToList();            
+            
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
