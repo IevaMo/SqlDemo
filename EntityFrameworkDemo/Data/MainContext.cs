@@ -8,27 +8,34 @@ namespace EntityFrameworkDemo.Data
     {
         public DbSet<Fruit> Fruits { get; set; }
 
+        public DbSet<Item> Items { get; set; }
+
         public DbSet<User> Users { get; set; }
 
         public MainContext(DbContextOptions<MainContext> options) : base(options)
         {
-            if (!Users.Any())
-            {
-                Users.Add(new User()
-                {
-                    FirstName = "Ieva",
-                    LastName = "Mockute"
-                });
 
-                Users.Add(new User()
-                {
-                    FirstName = "Mantas",
-                    LastName = "Mele"
-                });
+            Database.Migrate();
 
-                SaveChanges();
-            }
-        
+            if (!Users.Any()) // Patikrinama ar yra duomenu bazeje
+               {
+                   Users.Add(new User()
+                   {
+                       FirstName = "Ieva",
+                       LastName = "Mockute",
+                       Deleted = false
+                   });
+
+                   Users.Add(new User()
+                   {
+                       FirstName = "Mantas",
+                       LastName = "Mele",
+                       Deleted = false
+                   });
+
+                   SaveChanges();
+               }
+
         }
     }
 }

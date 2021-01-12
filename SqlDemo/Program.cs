@@ -26,17 +26,17 @@ namespace SqlDemo
                 }
 
                 //con.Open();
-                /*  string sql = "INSERT INTO Fruits VALUES(@param1, @param2, @param3)";
+               /* string sql = "INSERT INTO Fruits VALUES(@param1, @param2, @param3)";
                   using (SqlCommand cmd = new SqlCommand(sql,con)) // kiekvienam parametrui yra sukuriama Sql komanda
                   {
-                      cmd.Parameters.Add("@param1", SqlDbType.Int).Value = 5; // specifikuojame, koki tipa norime ideti
+                      cmd.Parameters.Add("@param1", SqlDbType.Int).Value = 1; // specifikuojame, koki tipa norime ideti
                       cmd.Parameters.Add("@param2", SqlDbType.VarChar,50).Value = "Slyva";
                       cmd.Parameters.Add("@param3", SqlDbType.Int, 50).Value = 1;
                       cmd.CommandType = System.Data.CommandType.Text;
                       cmd.ExecuteNonQuery();
-                  }*/
+                  }
 
-                var itemId = 5;
+               /* var itemId = 5;
                    //con.Open();
                    string sql = $"delete from Fruits where id = {itemId}"; // istrynimas pagal Id
                    using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -44,7 +44,7 @@ namespace SqlDemo
                        cmd.ExecuteNonQuery();
 
                        con.Close();
-                   }
+                   }*/
             }
 
             Console.ReadLine();
