@@ -13,7 +13,7 @@ namespace EntityFrameworkDemo.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public bool Deleted { get; set; } = false;
-        public int Price { get; set; }
+        public int Price { get; set; } = 99;
 
         public int? ApplyDiscount { get; set; }
     }

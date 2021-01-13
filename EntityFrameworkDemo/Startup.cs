@@ -1,4 +1,5 @@
 using EntityFrameworkDemo.Data;
+using EntityFrameworkDemo.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +31,11 @@ namespace EntityFrameworkDemo
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
 
+            // nuo cia
+            services.AddTransient<FruitService>();
+
             services.AddControllers();
+
             services.AddDbContext<MainContext>(o => o.UseSqlServer(connectionString));
 
             services.AddSwaggerGen(c =>
